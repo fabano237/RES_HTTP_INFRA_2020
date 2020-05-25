@@ -9,8 +9,8 @@ if [ -z "$IMAGE" ]; then
 fi
 docker kill $(docker ps -q --filter ancestor=$IMAGE)
 docker rm   $(docker ps -a -q --filter ancestor=$IMAGE)
-docker run -d res/apache_php
-docker run -d res/express_students
+docker run --name apache_static -d res/apache_php
+docker run --name express_dynamic -d res/express_students
 
 docker build -t $IMAGE .
-docker run $IMAGE
+docker run --name apache_rp $IMAGE
