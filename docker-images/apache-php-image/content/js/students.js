@@ -12,5 +12,5 @@ $(function() {
         });
     };
     getStudentsNames();
-    setInterval(getAStudentsNames, 2000);
+    setInterval(getStudentsNames, 2000);
 });
