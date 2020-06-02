@@ -3,8 +3,12 @@ set -e
 
 #Add setup RES lab
 echo "Setup for the RES lab!!"
-echo "static app URL: $STATIC_APP"
-echo "dynamic app URL: $DYNAMIC_APP"
+echo "Static App 1 URL: $STATIC_APP1"
+echo "Static App 2 URL: $STATIC_APP2"
+echo "Static App 3 URL: $STATIC_APP3"
+echo "Dynamic App 1 URL: $DYNAMIC_APP1"
+echo "Dynamic App 2 URL: $DYNAMIC_APP2"
+echo "Dynamic App 3 URL: $DYNAMIC_APP3"
 
 php /var/apache2/templates/config-template.php > /etc/apache2/sites-available/001-apache_reverse_proxy.conf
 
@@ -12,3 +16,4 @@ php /var/apache2/templates/config-template.php > /etc/apache2/sites-available/00
 rm -f /var/run/apache2/apache2.pid
 
 exec apache2ctl -DFOREGROUND
+
